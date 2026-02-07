@@ -1,0 +1,24 @@
+name: Basic CI
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show downloaded files
+        run: |
+          echo "=== Files in Repo ==="
+          ls
+          echo "=== Current Folder ==="
+          pwd
+
+      - name: Check login file
+        run: |
+          echo "=== login.txt content ==="
+          cat login.txt
